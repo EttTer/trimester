@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import moment from 'moment';
+import "./PrenatalCheckupCalculator.css"
+import ilustrace from "../assets/ilustrace1.png"
 
 const PrenatalCheckupCalculator = () => {
   const [examDate, setExamDate] = useState('');
@@ -51,32 +53,35 @@ const PrenatalCheckupCalculator = () => {
   return (
     <div>
       <h2>Vypočet odběru a přeměření plodu v 1. trimestru těhotenství</h2>
+      <img className='ilustrace1' src={ilustrace}/>
       <form>
-        <div>
-          <label htmlFor="examDate">Datum vyšetření:</label>
+        <div className='first_input_box'>
+          <label className='first_input_label' htmlFor="examDate">Datum vyšetření:</label>
           <input
             type="date"
             id="examDate"
             value={examDate}
             onChange={handleExamDateChange}
+            placeholder='01.01.2022'
           />
         </div>
-        <div>
-          <label htmlFor="pregnancySize">Stáří plodu změřeného UZ (týden + den):</label>
+        <div className='second_input_box'>
+          <label className='second_input_label' htmlFor="pregnancySize">Stáří plodu změřeného UZ (týden + den):</label>
           <input
             type="text"
             id="pregnancySize"
             value={pregnancySize}
+            placeholder='např. 5+4'
             onChange={handlePregnancySizeChange}
           />
         </div>
-        <div>
-          <button type="button" onClick={calculateNextCheckupDates}>
+        <div className='buttons'>
+          <button className='button_check' type="button" onClick={calculateNextCheckupDates}>
             Vypočti datum další kontroly
           </button>
         </div>
       </form>
-      <div>
+      <div className='result_sentence'>
         {nextCheckupDate && (
           <p>
             Těhotenský odběr a změření plodu lze v termínu od <strong>{nextCheckupDate}</strong> do <strong>{secondCheckupDate}</strong>
