@@ -1,2 +1,2 @@
 Aplikace pro sestry k jednoduššímu objenávání pacientek na vyšetření a odběry prvního trimestru.
-Počítáno dle poslední menstruace nebo dle změření plodu Ultrazvukem na základě hodnoty CRL a data měření.
+Počítáno dle datace těhotenství v týdnech a dnech na základě hodnoty CRL a data měření.
