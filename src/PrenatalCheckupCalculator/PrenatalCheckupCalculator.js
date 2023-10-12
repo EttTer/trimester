@@ -8,7 +8,7 @@ const PrenatalCheckupCalculator = () => {
   const [pregnancySize, setPregnancySize] = useState('');
   const [nextCheckupDate, setNextCheckupDate] = useState('');
   const [secondCheckupDate, setSecondCheckupDate] = useState('');
-  
+
 
   const handleExamDateChange = (event) => {
     setExamDate(event.target.value);
@@ -44,16 +44,16 @@ const PrenatalCheckupCalculator = () => {
       setSecondCheckupDate(secondCheckupDateObj.format('DD-MM-YYYY'));
 
       // Check if both checkup dates are within their desired ranges (8+5 to 10+2 weeks)
-      const startDate = examDateObj.clone().add(desiredWeeksFirst * 7 + desiredDaysFirst, 'days');
-      const endDate = examDateObj.clone().add(desiredWeeksSecond * 7 + desiredDaysSecond, 'days');
-      
+      // const startDate = examDateObj.clone().add(desiredWeeksFirst * 7 + desiredDaysFirst, 'days');
+      // const endDate = examDateObj.clone().add(desiredWeeksSecond * 7 + desiredDaysSecond, 'days');
+
     }
   };
 
   return (
     <div>
       <h2>Vypočet odběru a přeměření plodu v 1. trimestru těhotenství</h2>
-      <img className='ilustrace1' src={ilustrace}/>
+      <img className='ilustrace1' src={ilustrace} alt={""} />
       <form>
         <div className='first_input_box'>
           <label className='first_input_label' htmlFor="examDate">Datum vyšetření:</label>
@@ -87,9 +87,9 @@ const PrenatalCheckupCalculator = () => {
             Těhotenský odběr a změření plodu lze v termínu od <strong>{nextCheckupDate}</strong> do <strong>{secondCheckupDate}</strong>
           </p>
         )}
-        
-        
-    
+
+
+
       </div>
     </div>
   );
